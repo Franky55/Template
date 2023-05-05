@@ -75,7 +75,7 @@ void piloteIOT1_metAZero(void)
  */
 void piloteIOT1_metA(int i)
 {
-  pixels.setPixelColor(0, pixels.Color(i, 50, 255-i));
+  pixels.setPixelColor(0, pixels.Color(i, 10, 255-i));
 
     pixels.show();   // Send the updated pixel colors to the hardware.
 }

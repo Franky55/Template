@@ -65,6 +65,6 @@ void processusClignotant_attendAvantDEteindreLeTemoinLumineux(void)
 void processusClignotant_initialise(void)
 {
   processusClignotant_compteur = 0;
-  interfaceT1_eteint();
+  //interfaceT1_eteint();
   serviceBaseDeTemps_execute[PROCESSUSCLIGNOTANT_PHASE] = processusClignotant_attendAvantDAllumerLeTemoinLumineux;
 }

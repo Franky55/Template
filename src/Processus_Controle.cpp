@@ -11,11 +11,14 @@
 #include "Processus_Controle.h"
 
 unsigned long compteur = 0;
+unsigned long nb = 0;
 
 
 int Processus_Controle_initialise(void)
 {
-    serviceBaseDeTemps_execute[PROCESSUSCLIGNOTANT_PHASE] = Print_Acc_Data;
+  compteur = 0;
+  nb = 0;
+    serviceBaseDeTemps_execute[PROCESSUSCONTROLE_PHASE] = Print_Acc_Data;
   return 0;
 
 }

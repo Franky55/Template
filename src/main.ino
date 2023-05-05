@@ -1,20 +1,22 @@
 //#############################################################################
 /**
  * @file main.c
- * @author CamFo Camille Fortin (camfortin2022@gmail.com)
+ * @author Francis Gratton
  * @brief
  * Program file containing the code defined in xmain.h
  * Please refer to this other file for information necessary in order to make this work.
  * @version 0.1
- * @date 2022-11-14
+ * @date 2023-05-04
  * 
- * @copyright Copyright (c) 2022
+ * @copyright Copyright (c) 2023
  * 
  */
 //#############################################################################
 
 
 //INCLUSIONS
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_Sensor.h>
 #include <Adafruit_NeoPixel.h>
 #include "main.h"
 
@@ -64,10 +66,10 @@ void main_initialise(void)
 
   interfaceEntree1_initialise();
   interfaceT1_initialise();
-  //interface_Accelerometre_initialise();
+  interface_Accelerometre_initialise();
 
   processusClignotant_initialise();
-  //Processus_Controle_initialise();
+  Processus_Controle_initialise();
 }
 
 void setup(void) 

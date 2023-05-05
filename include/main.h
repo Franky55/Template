@@ -51,7 +51,7 @@
  * @brief Définition qui assigne le bon numéro de broche du ESP32 au témoin 1
  * 
  */
-#define PILOTEIOT1_BROCHE 13
+#define PILOTEIOT1_BROCHE 48
 /**
  * @brief Définition qui permet de modifier un état initiale au témoin 1
  * 
@@ -224,7 +224,7 @@
  * @brief Nombre de phase de la base de temps \ref xserviceBaseDeTemps.h
  * 
  */
-#define SERVICEBASEDETEMPS_NOMBRE_DE_PHASES 1
+#define SERVICEBASEDETEMPS_NOMBRE_DE_PHASES 2
 
 // Phase 0 et 1 sont utilisé et défini par ServiceCommunication.h
 

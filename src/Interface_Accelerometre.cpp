@@ -6,14 +6,19 @@
 #include "Interface_Accelerometre.h"
 
 
+#define I2C_SDA 7
+#define I2C_SCL 8
+
+TwoWire I2C = TwoWire(0);
 Adafruit_MPU6050 mpu;
 
 
 int interface_Accelerometre_initialise(void)
 {
+  
+  I2C.begin(I2C_SDA, I2C_SCL, 400000);
 
-
-  if (!mpu.begin()) 
+  if (!mpu.begin(0x68, &I2C, 0)) 
   {
     Serial.println("Failed to find MPU6050 chip");
     return -1;
