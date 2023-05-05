@@ -25,6 +25,8 @@
 #include "piloteEntree1.h"
 #include "piloteIOT1.h"
 #include "Pilote_I2C.h"
+#include "pilote_PWM.h"
+
 
 // Include des Services
 #include "serviceTaskServer.h"
@@ -34,6 +36,7 @@
 #include "interfaceEntree1.h"
 #include "interfaceT1.h"
 #include "Interface_Accelerometre.h"
+#include "interface_PWM.h"
 
 // Include des processus
 #include "processusClignotant.h"
@@ -63,10 +66,13 @@ void main_initialise(void)
 
   piloteEntree1_initialise();
   piloteIOT1_initialise(); 
+  pilote_I2C_Initialise();
+  pilote_PWM_Initialise();
 
-  interfaceEntree1_initialise();
+  //interfaceEntree1_initialise();
   interfaceT1_initialise();
   interface_Accelerometre_initialise();
+  interface_PWM_Initialise();
 
   processusClignotant_initialise();
   Processus_Controle_initialise();

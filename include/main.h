@@ -37,6 +37,14 @@
 //DEFINITIONS REQUISES PAR LE MODULE:
 //Dependances materielles:
 
+#define SERVO1 9
+
+#define FREQ 500
+#define RES 8
+
+#define I2C_SDA 7
+#define I2C_SCL 8
+
 /**
  * @brief Définition pour choisir le mode de lecture de PIN
  * 
@@ -224,7 +232,7 @@
  * @brief Nombre de phase de la base de temps \ref xserviceBaseDeTemps.h
  * 
  */
-#define SERVICEBASEDETEMPS_NOMBRE_DE_PHASES 2
+#define SERVICEBASEDETEMPS_NOMBRE_DE_PHASES 3
 
 // Phase 0 et 1 sont utilisé et défini par ServiceCommunication.h
 
@@ -238,6 +246,11 @@
  * @brief Numéro de phase du processus Controle
  */
 #define PROCESSUSCONTROLE_PHASE 1
+
+/**
+ * @brief Numéro de phase du processus PWM
+ */
+#define PROCESSUSPWM_PHASE 2
 
 
 

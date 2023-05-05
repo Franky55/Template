@@ -6,21 +6,59 @@
 #include "main.h"
 #include "Interface_Accelerometre.h"
 #include "serviceBaseDeTemps.h"
+#include "interface_PWM.h"
 
 #include <stdio.h>
 #include "Processus_Controle.h"
 
 unsigned long compteur = 0;
-unsigned long nb = 0;
+unsigned long compteurPWM = 0;
+
+int cycle = 0;
+bool Sense11 = true;
 
 
 int Processus_Controle_initialise(void)
 {
   compteur = 0;
-  nb = 0;
     serviceBaseDeTemps_execute[PROCESSUSCONTROLE_PHASE] = Print_Acc_Data;
+    serviceBaseDeTemps_execute[PROCESSUSPWM_PHASE] = MoveServo;
   return 0;
 
+}
+
+
+
+void MoveServo()
+{
+  compteurPWM++;
+
+  if (compteurPWM < 10)
+  {
+    return;
+  }
+
+  compteurPWM =0;
+
+  if(Sense11 == true)
+    {
+      cycle = cycle + 1;
+      if(cycle >= 180)
+      {
+        Sense11 = false;
+      }
+    }
+    else
+    {
+      cycle = cycle - 1;
+      if(cycle <= 0)
+      {
+        Sense11 = true;
+      }
+    }
+
+
+    interface_Write_PWM(cycle);
 }
 
 
