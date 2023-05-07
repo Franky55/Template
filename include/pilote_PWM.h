@@ -6,6 +6,6 @@
 
 
 int pilote_PWM_Initialise();
-void write_PWM(int servoPin, int position);
+float write_PWM(int servoPin, int position);
 
 #endif

@@ -21,9 +21,6 @@ Pwm pwm = Pwm();
 
 int pilote_PWM_Initialise()
 {
-    ledcSetup(0, FREQ, RES);
-    ledcAttachPin(SERVO1, 0);
-
     return 0;
 }
 

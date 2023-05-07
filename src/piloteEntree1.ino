@@ -37,17 +37,12 @@
 /// @return Valeur de la PIN de 1 ou 0 sur un unsigned char  
 unsigned char piloteEntree1_lit(void)
 {
-  return digitalRead(PILOTEENTREE1_BROCHE);
+  //return digitalRead(PILOTEENTREE1_BROCHE);
+  return 0;
 }
 /// @brief Foncion qui initialise la lecture de la Broche du microcontrôleur
 /// @param Aucun \ref PILOTEENTREE1_BROCHE est une définition dans \ref xmain.h  
 void piloteEntree1_initialise(void)
 {
-#ifdef PILOTEENTREE1_MODE_FLOTTANT_AVEC_PULL_UP
-	pinMode(PILOTEENTREE1_BROCHE,INPUT_PULLUP);
-#endif
 
-#ifdef PILOTEENTREE1_MODE_FLOTTANT_SANS_PULL_UP
-	pinMode(PILOTEENTREE1_BROCHE);
-#endif
 }

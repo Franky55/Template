@@ -3,11 +3,12 @@
 #include "main.h"
 #include <Adafruit_MPU6050.h>
 #include <Adafruit_Sensor.h>
-#include "Pilote_I2C.h"
 #include "Interface_Accelerometre.h"
 
 
-
+#define I2C_SDA 7
+#define I2C_SCL 8
+#define ADDRESSE 0x68
 
 TwoWire I2C = TwoWire(0);
 Adafruit_MPU6050 mpu;
@@ -15,10 +16,10 @@ Adafruit_MPU6050 mpu;
 
 int interface_Accelerometre_initialise(void)
 {
-  I2C.begin(I2C_SDA, I2C_SCL, 400000);
   
+  I2C.begin(I2C_SDA, I2C_SCL, 400000);
 
-  if (!mpu.begin(0x68, &I2C, 0)) 
+  if (!mpu.begin(ADDRESSE, &I2C, 0)) 
   {
     Serial.println("Failed to find MPU6050 chip");
     return -1;

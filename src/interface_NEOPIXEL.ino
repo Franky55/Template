@@ -11,8 +11,8 @@
 
 //INCLUSIONS
 #include "main.h"
-#include "piloteIOT1.h"
-#include "interfaceT1.h"
+#include "pilote_NEOPIXEL.h"
+#include "interface_NEOPIXEL.h"
 
 //Definitions privees
 //pas de definitions privees
@@ -32,37 +32,19 @@ int i=0;
 bool Sense = true;
 
 //Definitions de fonctions publiques:
-void interfaceT1_allume(void)
+void interface_NEOPIXEL_allume(int r, int g, int b)
 {
-  // pixels.Color() takes RGB values, from 0,0,0 up to 255,255,255
-    // Here we're using a moderately bright green color:
-    
-
-    if(Sense == true)
-    {
-      i = i + 1;
-      if(i >= 255)
-      {
-        Sense = false;
-      }
-    }
-    else
-    {
-      i = i - 1;
-      if(i <= 0)
-      {
-        Sense = true;
-      }
-    }
-  piloteIOT1_metA(i);
+  pilote_NEOPIXEL_metA(r, g, b);
 }
 
-void interfaceT1_eteint(void)
+
+
+void interface_NEOPIXEL_eteint(void)
 {
-  piloteIOT1_metA(INTERFACET1_VALEUR_POUR_ETEINDRE);
+  pilote_NEOPIXEL_Clear();
 }
 
-void interfaceT1_initialise(void)
+void interface_NEOPIXEL_initialise(void)
 {
-  piloteIOT1_metA(INTERFACET1_VALEUR_POUR_ETEINDRE);
+  
 }

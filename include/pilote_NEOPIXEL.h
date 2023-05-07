@@ -37,19 +37,13 @@
  * @brief Fonction qui met a 5V la broche \ref PILOTEIOT1_BROCHE du microcontrôleur 
  * 
  */
-void piloteIOT1_metAUn(void);
+void pilote_NEOPIXEL_metA(int r, int g, int b);
 /**
  * @brief Fonction qui met a 0V la broche \ref PILOTEIOT1_BROCHE du mirocontrôleur
  * 
  */
-void piloteIOT1_metAZero(void);
-/**
- * @brief Fonciton qui met la broche \ref PILOTEIOT1_BROCHE du mirocontrôleur
- *   au niveau passé en paramètre: 1 ou 0
- * 
- * @param Niveau 
- */
-void piloteIOT1_metA(unsigned char Niveau);
+void pilote_NEOPIXEL_Clear(void);
+
 /**
  * @brief Fonction d'initialisation de la broche \ref PILOTEIOT1_BROCHE
  *  du mirocontrôleur. Met la broche du microcontrôleur en sortie et assigne
@@ -57,7 +51,7 @@ void piloteIOT1_metA(unsigned char Niveau);
  *  ou \ref PILOTEIOT1_ETAT_INITIAL_A_UN.
  * 
  */
-void piloteIOT1_initialise(void);
+void pilote_NEOPIXEL_initialise(void);
 
 //Variables publiques:
 //pas de variables publiques

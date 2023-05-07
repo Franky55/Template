@@ -4,7 +4,7 @@
 
 //INCLUSIONS
 #include "main.h"
-#include "interfaceT1.h"
+#include "interface_NEOPIXEL.h"
 
 #include "serviceBaseDeTemps.h"
 #include "processusClignotant.h"
@@ -44,9 +44,9 @@ void processusClignotant_attendAvantDAllumerLeTemoinLumineux(void)
 
 
   // END test Code 
-  interfaceT1_allume();
+  interface_NEOPIXEL_allume(10, 10, 10);
   processusClignotant_compteur = 0;
-  //serviceBaseDeTemps_execute[PROCESSUSCLIGNOTANT_PHASE] = processusClignotant_attendAvantDEteindreLeTemoinLumineux;
+  serviceBaseDeTemps_execute[PROCESSUSCLIGNOTANT_PHASE] = processusClignotant_attendAvantDEteindreLeTemoinLumineux;
 }
 
 void processusClignotant_attendAvantDEteindreLeTemoinLumineux(void)
@@ -57,7 +57,7 @@ void processusClignotant_attendAvantDEteindreLeTemoinLumineux(void)
     return;
   }
 
-  interfaceT1_eteint();
+  interface_NEOPIXEL_eteint();
   processusClignotant_compteur = 0;
   serviceBaseDeTemps_execute[PROCESSUSCLIGNOTANT_PHASE] = processusClignotant_attendAvantDAllumerLeTemoinLumineux;
 }
@@ -65,6 +65,6 @@ void processusClignotant_attendAvantDEteindreLeTemoinLumineux(void)
 void processusClignotant_initialise(void)
 {
   processusClignotant_compteur = 0;
-  //interfaceT1_eteint();
+  interface_NEOPIXEL_eteint();
   serviceBaseDeTemps_execute[PROCESSUSCLIGNOTANT_PHASE] = processusClignotant_attendAvantDAllumerLeTemoinLumineux;
 }
